@@ -6,8 +6,9 @@ do
     do
         mkdir /app/data/a${AFFINITY}l${LOCALITY}
         jana -b -Pplugins=JTest -Pbenchmark:resultsdir=/app/data/a${AFFINITY}l${LOCALITY} -Pjana:affinity=$AFFINITY -Pjana:locality=$LOCALITY
-        if [ $? -ne 0 ]; then
-          exit
+        RESULT=$?
+        if [ $RESULT -ne 0 ]; then
+          exit $RESULT
         fi
     done
 done
