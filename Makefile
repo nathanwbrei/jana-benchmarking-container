@@ -16,7 +16,7 @@ run:
 	docker run -it \
 		--mount type=bind,source="$(PWD)"/data,target=/app/data \
 		--name jana2_benchmarking_container \
-		jana2_benchmarking /app/data/benchmark.sh
+		jana2_benchmarking
 
 shell:
 	docker exec -it jana2_benchmarking_container /bin/bash
